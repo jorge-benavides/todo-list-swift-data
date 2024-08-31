@@ -15,7 +15,15 @@ class ListViewController: UIViewController {
         button.tintColor = .wizelineBlue
         return button
     }()
-    
+
+    private lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.delegate = self
+        table.dataSource = self
+        return table
+    }()
+
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +36,14 @@ class ListViewController: UIViewController {
         view.backgroundColor = .wizelineLightGrey
         self.navigationController?.navigationItem.rightBarButtonItem = addButton
         navigationItem.rightBarButtonItem = addButton
+
+        view.addSubview(tableView)
+        tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0.8).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.8).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -0.8).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -0.8).isActive = true
+
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "basicStyle")
     }
 
     @objc private func addTapped() {
@@ -36,6 +52,21 @@ class ListViewController: UIViewController {
 }
 
 // MARK: Extensions
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = "Title"
+        content.secondaryText = "Secondary text"
+        cell.contentConfiguration = content
+        return cell
+    }
+}
 
 extension ListViewController {
     private enum Constants {
