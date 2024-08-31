@@ -10,15 +10,18 @@ import Foundation
 class ListViewModel {
 
     private let toDosManager: ToDoManager
-    private var toDos: [ToDo]
+    private var toDos: [ToDo] = []
 
     init(toDosManager: ToDoManager = SwiftDataManager()) {
         self.toDosManager = toDosManager
-        toDos = self.toDosManager.fetchData()
     }
 
     func count() -> Int {
         toDos.count
+    }
+
+    func updateTodos() {
+        toDos = self.toDosManager.fetchData()
     }
 
     func getListCellViewModel(at index: Int) -> ListCellViewModel {
