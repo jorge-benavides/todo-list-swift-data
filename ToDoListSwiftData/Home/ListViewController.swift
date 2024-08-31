@@ -29,12 +29,29 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           navigationController?.navigationBar.prefersLargeTitles = true
+
+           let appearance = UINavigationBarAppearance()
+           appearance.backgroundColor = .wizelineRed
+           appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+           appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+           navigationController?.navigationBar.tintColor = .white
+           navigationController?.navigationBar.standardAppearance = appearance
+           navigationController?.navigationBar.compactAppearance = appearance
+           navigationController?.navigationBar.scrollEdgeAppearance = appearance
+   }
+
     // MARK: Helpers
     private func configureUI() {
         title = Constants.title
         view.backgroundColor = .wizelineLightGrey
         self.navigationController?.navigationItem.rightBarButtonItem = addButton
+        self.navigationController?.navigationBar.barTintColor = .wizelineRed
+        tabBarController?.tabBar.tintColor = .wizelineRed
         navigationItem.rightBarButtonItem = addButton
 
         view.addSubview(tableView)
