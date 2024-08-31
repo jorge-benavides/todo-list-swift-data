@@ -16,7 +16,7 @@ class ToDoTableViewCell: UITableViewCell {
         didSet {
             self.titleLabel.text = listCellViewModel.getData().title
             self.descriptionLabel.text = listCellViewModel.getData().description
-            self.checkImage.image = listCellViewModel.getData().isFinished ? UIImage(named: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
+            self.checkImage.image = listCellViewModel.getData().isFinished ? .checked : .unChecked
         }
     }
 
@@ -40,7 +40,7 @@ class ToDoTableViewCell: UITableViewCell {
     }()
 
     private let checkImage: UIImageView = {
-        let image = UIImageView(image: UIImage(systemName: "checkmark.circle"))
+        let image = UIImageView(image: .unChecked)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.tintColor = .wizelineRed
         return image
