@@ -87,6 +87,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.listCellViewModel = viewModel.getListCellViewModel(at: indexPath.row)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteItem(at: indexPath.row) {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension ListViewController {

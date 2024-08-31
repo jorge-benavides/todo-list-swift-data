@@ -25,4 +25,11 @@ class ListViewModel {
         let item = toDos[index]
         return ListCellViewModel(uuid: item.id.uuidString, title: item.title, description: item.toDoDescription, isFinished: item.isFinished)
     }
+
+    func deleteItem(at index: Int, completion: () -> ()) {
+        let toDo = toDos[index]
+        toDosManager.deleteData(toDo: toDo)
+        toDos = self.toDosManager.fetchData()
+        completion()
+    }
 }
