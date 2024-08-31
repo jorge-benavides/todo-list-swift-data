@@ -23,6 +23,7 @@
 		D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */; };
 		D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */; };
 		D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */; };
+		D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E922C83D9B1004AC204 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		D0E48E922C83D9B1004AC204 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D00F51F32C83A88F00341184 /* Models */,
 				D00F51ED2C8392D200341184 /* Colors */,
 				D00F51EA2C8391A200341184 /* Home */,
+				D0E48E912C83D976004AC204 /* Detail */,
 				D00F51BA2C83915600341184 /* AppDelegate.swift */,
 				D00F51BC2C83915600341184 /* SceneDelegate.swift */,
 				D00F51C32C83915800341184 /* Assets.xcassets */,
@@ -194,6 +197,14 @@
 				D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		D0E48E912C83D976004AC204 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D0E48E922C83D9B1004AC204 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */,
 				D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */,
 				D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */,
+				D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */,
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
 				D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */,
