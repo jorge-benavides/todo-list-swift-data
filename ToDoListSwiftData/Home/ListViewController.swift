@@ -10,7 +10,7 @@ import UIKit
 class ListViewController: UIViewController {
 
     // MARK: Properties
-    private let viewModel: ListViewModel = ListViewModel()
+    private let viewModel: ListViewProtocol = ListViewModel()
 
     private lazy var addButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))

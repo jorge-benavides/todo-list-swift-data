@@ -7,7 +7,14 @@
 
 import Foundation
 
-class ListViewModel {
+protocol ListViewProtocol {
+    func count() -> Int
+    func updateTodos()
+    func getListCellViewModel(at index: Int) -> ListCellViewModel
+    func deleteItem(at index: Int, completion: () -> ())
+}
+
+class ListViewModel: ListViewProtocol {
 
     private let toDosManager: ToDoManager
     private var toDos: [ToDo] = []
