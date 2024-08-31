@@ -22,6 +22,7 @@
 		D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F92C83B8FB00341184 /* ListViewModel.swift */; };
 		D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */; };
 		D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */; };
+		D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D00F51F92C83B8FB00341184 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				D00F51F02C839C7200341184 /* Cells */,
 				D00F51EB2C8391CA00341184 /* ListViewController.swift */,
 				D00F51F92C83B8FB00341184 /* ListViewModel.swift */,
+				D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */,
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
+				D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */,
 				D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */,
 				D00F51F52C83A8A000341184 /* ToDo.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,

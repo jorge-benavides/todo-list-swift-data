@@ -10,4 +10,5 @@ import UIKit
 extension UIImage {
     static let checked = UIImage(systemName: "checkmark.circle.fill")
     static let unChecked = UIImage(systemName: "checkmark.circle")
+    static let noData = UIImage(systemName: "doc.questionmark")
 }

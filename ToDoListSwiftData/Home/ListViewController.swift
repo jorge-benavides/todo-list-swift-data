@@ -26,6 +26,11 @@ class ListViewController: UIViewController {
         return table
     }()
 
+    private lazy var noDataView: NoDataView = {
+        let view = NoDataView()
+        return view
+    }()
+
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +52,13 @@ class ListViewController: UIViewController {
         navigationItem.rightBarButtonItem = addButton
 
         view.addSubview(tableView)
-        tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 0.8).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0.8).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -0.8).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -0.8).isActive = true
-
+        tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: Constants.standardSpacing).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.standardSpacing).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Constants.minusStandardSpacing).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Constants.minusStandardSpacing).isActive = true
+        tableView.backgroundView = noDataView
         self.tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: ToDoTableViewCell.identifier)
+
         configureNavBar()
     }
 
@@ -79,7 +85,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.count()
+        viewModel.count() > .zero ? viewModel.count() : .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,5 +107,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 extension ListViewController {
     private enum Constants {
         static let title = "List"
+        static let standardSpacing: CGFloat = 8.0
+        static let minusStandardSpacing: CGFloat = -8.0
     }
 }
