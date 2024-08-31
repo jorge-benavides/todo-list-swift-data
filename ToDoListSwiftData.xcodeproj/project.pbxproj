@@ -15,6 +15,7 @@
 		D00F51DC2C83915900341184 /* ToDoListSwiftDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51DB2C83915900341184 /* ToDoListSwiftDataUITests.swift */; };
 		D00F51DE2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51DD2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift */; };
 		D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51EB2C8391CA00341184 /* ListViewController.swift */; };
+		D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51EE2C8392E100341184 /* BaseColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D00F51DB2C83915900341184 /* ToDoListSwiftDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListSwiftDataUITests.swift; sourceTree = "<group>"; };
 		D00F51DD2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListSwiftDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D00F51EB2C8391CA00341184 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D00F51EE2C8392E100341184 /* BaseColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		D00F51B92C83915600341184 /* ToDoListSwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				D00F51ED2C8392D200341184 /* Colors */,
 				D00F51EA2C8391A200341184 /* Home */,
 				D00F51BA2C83915600341184 /* AppDelegate.swift */,
 				D00F51BC2C83915600341184 /* SceneDelegate.swift */,
@@ -130,6 +133,14 @@
 				D00F51EB2C8391CA00341184 /* ListViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D00F51ED2C8392D200341184 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				D00F51EE2C8392E100341184 /* BaseColors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */,
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
