@@ -10,6 +10,8 @@ import UIKit
 class DetailViewController: UIViewController {
 
     //MARK: Properties
+    private let viewModel: DetailViewProtocol = DetailViewModel()
+
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -76,7 +78,16 @@ class DetailViewController: UIViewController {
     }
 
     @objc private func saveButtonTapped() {
+        let result = viewModel.save(title: titleTextField.text ?? "", description: descriptionTextField.text ?? "")
 
+        switch result {
+        case .success:
+            self.navigationController?.popViewController(animated: true)
+        case .failure(let error):
+            let alertViewController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
+            alertViewController.addAction(.init(title: "Ok", style: .destructive))
+            self.present(alertViewController, animated: true)
+        }
     }
 }
 

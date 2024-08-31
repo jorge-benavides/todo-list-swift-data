@@ -40,6 +40,7 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         viewModel.updateTodos()
+        tableView.reloadData()
     }
 
     // MARK: Helpers
@@ -56,7 +57,6 @@ class ListViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.standardSpacing).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Constants.minusStandardSpacing).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Constants.minusStandardSpacing).isActive = true
-        tableView.backgroundView = noDataView
         self.tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: ToDoTableViewCell.identifier)
 
         configureNavBar()
@@ -86,7 +86,8 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.count() > .zero ? viewModel.count() : .zero
+        tableView.backgroundView = viewModel.count() > .zero ? nil : noDataView
+        return viewModel.count() > .zero ? viewModel.count() : .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

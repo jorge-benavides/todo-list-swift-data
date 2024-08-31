@@ -24,6 +24,7 @@
 		D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */; };
 		D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */; };
 		D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E922C83D9B1004AC204 /* DetailViewController.swift */; };
+		D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E942C83E118004AC204 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		D0E48E922C83D9B1004AC204 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D0E48E942C83E118004AC204 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D0E48E922C83D9B1004AC204 /* DetailViewController.swift */,
+				D0E48E942C83E118004AC204 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */,
 				D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */,
 				D00F51F52C83A8A000341184 /* ToDo.swift in Sources */,
+				D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
 				D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */,
 				D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */,
