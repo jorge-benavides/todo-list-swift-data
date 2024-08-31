@@ -43,7 +43,7 @@ class ListViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -0.8).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -0.8).isActive = true
 
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "basicStyle")
+        self.tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: ToDoTableViewCell.identifier)
     }
 
     @objc private func addTapped() {
@@ -59,11 +59,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        content.text = "Title"
-        content.secondaryText = "Secondary text"
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: ToDoTableViewCell.identifier, for: indexPath) as! ToDoTableViewCell
+        
         return cell
     }
 }

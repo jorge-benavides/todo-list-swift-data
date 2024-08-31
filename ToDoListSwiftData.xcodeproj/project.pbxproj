@@ -16,6 +16,7 @@
 		D00F51DE2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51DD2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift */; };
 		D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51EB2C8391CA00341184 /* ListViewController.swift */; };
 		D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51EE2C8392E100341184 /* BaseColors.swift */; };
+		D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D00F51DD2C83915900341184 /* ToDoListSwiftDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListSwiftDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D00F51EB2C8391CA00341184 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D00F51EE2C8392E100341184 /* BaseColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColors.swift; sourceTree = "<group>"; };
+		D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		D00F51EA2C8391A200341184 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D00F51F02C839C7200341184 /* Cells */,
 				D00F51EB2C8391CA00341184 /* ListViewController.swift */,
 			);
 			path = Home;
@@ -141,6 +144,14 @@
 				D00F51EE2C8392E100341184 /* BaseColors.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		D00F51F02C839C7200341184 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
+				D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
