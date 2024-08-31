@@ -19,6 +19,8 @@
 		D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */; };
 		D00F51F52C83A8A000341184 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F42C83A8A000341184 /* ToDo.swift */; };
 		D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F72C83B1C800341184 /* SwiftDataManager.swift */; };
+		D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F92C83B8FB00341184 /* ListViewModel.swift */; };
+		D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D00F51F42C83A8A000341184 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		D00F51F72C83B1C800341184 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
+		D00F51F92C83B8FB00341184 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			children = (
 				D00F51F02C839C7200341184 /* Cells */,
 				D00F51EB2C8391CA00341184 /* ListViewController.swift */,
+				D00F51F92C83B8FB00341184 /* ListViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */,
+				D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -306,12 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */,
 				D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */,
 				D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */,
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
 				D00F51F52C83A8A000341184 /* ToDo.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
+				D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */,
 				D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

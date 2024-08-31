@@ -10,6 +10,8 @@ import UIKit
 class ListViewController: UIViewController {
 
     // MARK: Properties
+    private let viewModel: ListViewModel = ListViewModel()
+
     private lazy var addButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         button.tintColor = .wizelineBlue
@@ -32,7 +34,7 @@ class ListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
-        configureNavBar()
+
     }
 
     // MARK: Helpers
@@ -51,6 +53,7 @@ class ListViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -0.8).isActive = true
 
         self.tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: ToDoTableViewCell.identifier)
+        configureNavBar()
     }
 
     private func configureNavBar() {
@@ -76,12 +79,12 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToDoTableViewCell.identifier, for: indexPath) as! ToDoTableViewCell
-        
+        cell.listCellViewModel = viewModel.getListCellViewModel(at: indexPath.row)
         return cell
     }
 }

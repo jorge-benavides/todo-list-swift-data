@@ -12,6 +12,14 @@ class ToDoTableViewCell: UITableViewCell {
     // MARK: Properties
     static let identifier: String = String(describing: ToDoTableViewCell.self)
 
+    var listCellViewModel: ListCellViewModel = ListCellViewModel(uuid: "", title: "", description: "", isFinished: false) {
+        didSet {
+            self.titleLabel.text = listCellViewModel.getData().title
+            self.descriptionLabel.text = listCellViewModel.getData().description
+            self.checkImage.image = listCellViewModel.getData().isFinished ? UIImage(named: "checkmark.circle") : UIImage(systemName: "checkmark.circle.fill")
+        }
+    }
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
