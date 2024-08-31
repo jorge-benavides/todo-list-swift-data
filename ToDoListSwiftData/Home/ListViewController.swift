@@ -31,19 +31,9 @@ class ListViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           navigationController?.navigationBar.prefersLargeTitles = true
-
-           let appearance = UINavigationBarAppearance()
-           appearance.backgroundColor = .wizelineRed
-           appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-           appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-           navigationController?.navigationBar.tintColor = .white
-           navigationController?.navigationBar.standardAppearance = appearance
-           navigationController?.navigationBar.compactAppearance = appearance
-           navigationController?.navigationBar.scrollEdgeAppearance = appearance
-   }
+       super.viewWillAppear(animated)
+        configureNavBar()
+    }
 
     // MARK: Helpers
     private func configureUI() {
@@ -61,6 +51,20 @@ class ListViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -0.8).isActive = true
 
         self.tableView.register(ToDoTableViewCell.self, forCellReuseIdentifier: ToDoTableViewCell.identifier)
+    }
+
+    private func configureNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .wizelineRed
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 
     @objc private func addTapped() {
