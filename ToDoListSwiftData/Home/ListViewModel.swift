@@ -45,8 +45,8 @@ class ListViewModel: ListViewProtocol {
     }
 
     func getListDetailsViewModel(at index: Int) -> DetailViewProtocol {
-        let id = toDos[index].id
-        let viewModel = DetailViewModel(id: id, type: .update)
+        let toDo = toDos[index]
+        let viewModel = DetailViewModel(type: .update, id: toDo.id, titleTextField: toDo.title, descriptionTextField: toDo.toDoDescription, isFinished: toDo.isFinished)
         return viewModel
     }
 }

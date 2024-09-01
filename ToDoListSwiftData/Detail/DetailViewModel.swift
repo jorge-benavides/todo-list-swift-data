@@ -8,24 +8,35 @@
 import Foundation
 
 protocol DetailViewProtocol {
-    var id: UUID { get }
     var type: DetailType { get }
+    var id: UUID { get }
+    var titleTextField: String { get }
+    var descriptionTextField: String { get }
+    var isFinished: Bool { get }
     func save(title: String, description: String) -> Result<Bool, Error>
 }
 
 class DetailViewModel: DetailViewProtocol {
 
+    // MARK: Properties
+    private let toDosManager: ToDoManager
     var type: DetailType
     var id: UUID
+    var titleTextField: String
+    var descriptionTextField: String
+    var isFinished: Bool
 
-    private let toDosManager: ToDoManager
-
-    init(toDosManager: ToDoManager = SwiftDataManager(), id: UUID = UUID(), type: DetailType = .new) {
+    // MARK: Life cycle
+    init(toDosManager: ToDoManager = SwiftDataManager(), type: DetailType = .new, id: UUID = .init(), titleTextField: String = .init(), descriptionTextField: String = .init(), isFinished: Bool = false) {
         self.toDosManager = toDosManager
-        self.id = id
         self.type = type
+        self.id = id
+        self.titleTextField = titleTextField
+        self.descriptionTextField = descriptionTextField
+        self.isFinished = isFinished
     }
 
+    // MARK: Helpers
     func save(title: String, description: String) -> Result<Bool, Error> {
         switch type {
         case .new:

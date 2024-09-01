@@ -84,6 +84,11 @@ class DetailViewController: UIViewController {
         saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: Constants.minusStandardSpacing).isActive = true
         saveButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Constants.minusStandardSpacing).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: Constants.buttonheight).isActive = true
+
+        if viewModel.type == .update {
+            titleTextField.text = viewModel.titleTextField
+            descriptionTextField.text = viewModel.descriptionTextField
+        }
     }
 
     @objc private func saveButtonTapped() {
