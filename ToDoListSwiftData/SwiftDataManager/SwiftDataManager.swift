@@ -12,7 +12,9 @@ protocol ToDoManager {
     func addNewData(title: String, description: String)
     func updateData(id: UUID, title: String, description: String, isFinished: Bool)
     func fetchData() -> [ToDo]
+    func fetchById(modelId: PersistentIdentifier)
     func deleteData(toDo: ToDo)
+    func deleteAll()
 }
 
 class SwiftDataManager: ToDoManager {
@@ -55,7 +57,19 @@ class SwiftDataManager: ToDoManager {
     }
 
     @MainActor
+    func fetchById(modelId: PersistentIdentifier) {
+        if let model = container?.mainContext.model(for: modelId) as? ToDo {
+            print(model.title)
+        }
+    }
+
+    @MainActor
     func deleteData(toDo: ToDo) {
         container?.mainContext.delete(toDo)
+    }
+
+    @MainActor
+    func deleteAll() {
+        container?.mainContext.container.deleteAllData()
     }
 }
