@@ -25,6 +25,7 @@ class SwiftDataManager: ToDoManager {
 
     private init() {
         do {
+            print(URL.applicationSupportDirectory.path(percentEncoded: false))
             container = try ModelContainer(for: ToDo.self)
         } catch {
             print(error.localizedDescription)
@@ -70,6 +71,11 @@ class SwiftDataManager: ToDoManager {
 
     @MainActor
     func deleteAll() {
-        container?.mainContext.container.deleteAllData()
+        do {
+            try container?.mainContext.delete(model: ToDo.self)
+        } catch {
+            print("Failed to clear all")
+        }
+
     }
 }

@@ -27,6 +27,7 @@
 		D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E942C83E118004AC204 /* DetailViewModel.swift */; };
 		D0E48E972C83E7D3004AC204 /* ListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */; };
 		D0E48E992C83EAAF004AC204 /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E982C83EAAF004AC204 /* DetailViewCoordinator.swift */; };
+		D0E48E9B2C84AF0B004AC204 /* SwiftDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E9A2C84AF0B004AC204 /* SwiftDataManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		D0E48E942C83E118004AC204 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCoordinator.swift; sourceTree = "<group>"; };
 		D0E48E982C83EAAF004AC204 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
+		D0E48E9A2C84AF0B004AC204 /* SwiftDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D00F51D12C83915900341184 /* ToDoListSwiftDataTests.swift */,
+				D0E48E9A2C84AF0B004AC204 /* SwiftDataManagerTests.swift */,
 			);
 			path = ToDoListSwiftDataTests;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00F51D22C83915900341184 /* ToDoListSwiftDataTests.swift in Sources */,
+				D0E48E9B2C84AF0B004AC204 /* SwiftDataManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
