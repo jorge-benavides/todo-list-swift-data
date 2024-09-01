@@ -12,6 +12,7 @@ protocol ListViewProtocol {
     func updateTodos()
     func getListCellViewModel(at index: Int) -> ListCellViewModel
     func deleteItem(at index: Int, completion: () -> ())
+    func getListDetailsViewModel(at index: Int) -> DetailViewProtocol
 }
 
 class ListViewModel: ListViewProtocol {
@@ -41,5 +42,11 @@ class ListViewModel: ListViewProtocol {
         toDosManager.deleteData(toDo: toDo)
         toDos = self.toDosManager.fetchData()
         completion()
+    }
+
+    func getListDetailsViewModel(at index: Int) -> DetailViewProtocol {
+        let id = toDos[index].id
+        let viewModel = DetailViewModel(id: id, type: .update)
+        return viewModel
     }
 }

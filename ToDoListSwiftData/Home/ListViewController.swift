@@ -88,7 +88,7 @@ class ListViewController: UIViewController {
 
     @objc private func addTapped() {
         guard let navigationController = navigationController else { return }
-        let detailViewController = DetailViewCoordinator(type: .new, navigationController: navigationController)
+        let detailViewController = DetailViewCoordinator(navigationController: navigationController)
         detailViewController.start()
     }
 }
@@ -105,6 +105,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ToDoTableViewCell.identifier, for: indexPath) as! ToDoTableViewCell
         cell.listCellViewModel = viewModel.getListCellViewModel(at: indexPath.row)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let navigationController = navigationController else { return }
+        let viewModel = viewModel.getListDetailsViewModel(at: indexPath.row)
+        let coordinator = DetailViewCoordinator(detailViewModel: viewModel, navigationController: navigationController)
+        coordinator.start()
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

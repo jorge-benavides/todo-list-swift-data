@@ -9,29 +9,22 @@ import UIKit
 
 enum DetailType {
     case new
-    case withData
+    case update
 }
 
 class DetailViewCoordinator: Coordinator {
     
     private let detailViewController: DetailViewController
-    private let detailViewModel: DetailViewModel
-    private let type: DetailType
+    private let detailViewModel: DetailViewProtocol
     private let navigationController: UINavigationController
 
-    init(detailViewModel: DetailViewModel = DetailViewModel(toDosManager: SwiftDataManager()), type: DetailType, navigationController: UINavigationController) {
+    init(detailViewModel: DetailViewProtocol = DetailViewModel(toDosManager: SwiftDataManager()), navigationController: UINavigationController) {
         self.detailViewModel = detailViewModel
         self.detailViewController = DetailViewController(viewModel: detailViewModel)
-        self.type = type
         self.navigationController = navigationController
     }
 
     func start() {
-        switch type {
-        case .new:
-            navigationController.pushViewController(detailViewController, animated: true)
-        case .withData:
-            print("TO DO")
-        }
+        navigationController.pushViewController(detailViewController, animated: true)
     }
 }
