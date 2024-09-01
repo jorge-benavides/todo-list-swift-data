@@ -10,7 +10,7 @@ import UIKit
 class ListViewController: UIViewController {
 
     // MARK: Properties
-    private let viewModel: ListViewProtocol = ListViewModel()
+    private let viewModel: ListViewProtocol
 
     private lazy var addButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
@@ -32,6 +32,16 @@ class ListViewController: UIViewController {
     }()
 
     // MARK: Lifecycle
+    init(viewModel: ListViewProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()

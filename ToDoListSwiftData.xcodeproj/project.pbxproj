@@ -25,6 +25,7 @@
 		D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */; };
 		D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E922C83D9B1004AC204 /* DetailViewController.swift */; };
 		D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E942C83E118004AC204 /* DetailViewModel.swift */; };
+		D0E48E972C83E7D3004AC204 /* ListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		D0E48E922C83D9B1004AC204 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0E48E942C83E118004AC204 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				D00F51EB2C8391CA00341184 /* ListViewController.swift */,
 				D00F51F92C83B8FB00341184 /* ListViewModel.swift */,
 				D0E48E8F2C83D3A5004AC204 /* NoDataView.swift */,
+				D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
 				D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */,
 				D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */,
+				D0E48E972C83E7D3004AC204 /* ListViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
