@@ -87,8 +87,9 @@ class ListViewController: UIViewController {
     }
 
     @objc private func addTapped() {
-        let detailViewController = DetailViewController()
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        guard let navigationController = navigationController else { return }
+        let detailViewController = DetailViewCoordinator(type: .new, navigationController: navigationController)
+        detailViewController.start()
     }
 }
 

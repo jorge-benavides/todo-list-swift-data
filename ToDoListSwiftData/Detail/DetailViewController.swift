@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     //MARK: Properties
-    private let viewModel: DetailViewProtocol = DetailViewModel()
+    private let viewModel: DetailViewProtocol
 
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
@@ -54,6 +54,15 @@ class DetailViewController: UIViewController {
     }()
 
     // MARK: Life cycle
+    init(viewModel: DetailViewProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()

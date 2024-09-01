@@ -26,6 +26,7 @@
 		D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E922C83D9B1004AC204 /* DetailViewController.swift */; };
 		D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E942C83E118004AC204 /* DetailViewModel.swift */; };
 		D0E48E972C83E7D3004AC204 /* ListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */; };
+		D0E48E992C83EAAF004AC204 /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E982C83EAAF004AC204 /* DetailViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		D0E48E922C83D9B1004AC204 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0E48E942C83E118004AC204 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D0E48E962C83E7D3004AC204 /* ListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCoordinator.swift; sourceTree = "<group>"; };
+		D0E48E982C83EAAF004AC204 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				D0E48E922C83D9B1004AC204 /* DetailViewController.swift */,
 				D0E48E942C83E118004AC204 /* DetailViewModel.swift */,
+				D0E48E982C83EAAF004AC204 /* DetailViewCoordinator.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */,
 				D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */,
 				D0E48E972C83E7D3004AC204 /* ListViewCoordinator.swift in Sources */,
+				D0E48E992C83EAAF004AC204 /* DetailViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
