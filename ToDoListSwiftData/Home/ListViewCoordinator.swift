@@ -18,8 +18,8 @@ class AppCoordinator: Coordinator {
     private let listViewModel: ListViewModel
     private let navigationController: UINavigationController
 
-    init(listViewModel: ListViewModel = ListViewModel(toDosManager: SwiftDataManager()), window: UIWindow) {
-        self.listViewModel = listViewModel
+    init(window: UIWindow) {
+        self.listViewModel = ListViewModel()
         listViewController = ListViewController(viewModel: self.listViewModel)
         navigationController = UINavigationController(rootViewController: listViewController)
         self.window = window

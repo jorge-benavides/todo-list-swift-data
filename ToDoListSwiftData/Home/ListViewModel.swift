@@ -20,7 +20,7 @@ class ListViewModel: ListViewProtocol {
     private let toDosManager: ToDoManager
     private var toDos: [ToDo] = []
 
-    init(toDosManager: ToDoManager = SwiftDataManager()) {
+    init(toDosManager: ToDoManager = SwiftDataManager.shared) {
         self.toDosManager = toDosManager
     }
 

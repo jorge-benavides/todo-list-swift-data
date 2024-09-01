@@ -87,4 +87,9 @@ class ToDoTableViewCell: UITableViewCell {
         checkImage.bottomAnchor.constraint(lessThanOrEqualTo: descriptionLabel.bottomAnchor, constant: -8.0).isActive = true
     }
 
+    override func prepareForReuse() {
+        checkImage.image = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+    }
 }

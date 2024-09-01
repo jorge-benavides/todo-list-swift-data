@@ -17,9 +17,11 @@ protocol ToDoManager {
 
 class SwiftDataManager: ToDoManager {
 
+    static let shared: ToDoManager = SwiftDataManager()
+
     private var container: ModelContainer?
 
-    init() {
+    private init() {
         do {
             container = try ModelContainer(for: ToDo.self)
         } catch {

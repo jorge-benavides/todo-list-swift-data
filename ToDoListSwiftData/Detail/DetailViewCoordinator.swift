@@ -18,7 +18,7 @@ class DetailViewCoordinator: Coordinator {
     private let detailViewModel: DetailViewProtocol
     private let navigationController: UINavigationController
 
-    init(detailViewModel: DetailViewProtocol = DetailViewModel(toDosManager: SwiftDataManager()), navigationController: UINavigationController) {
+    init(detailViewModel: DetailViewProtocol = DetailViewModel(toDosManager: SwiftDataManager.shared), navigationController: UINavigationController) {
         self.detailViewModel = detailViewModel
         self.detailViewController = DetailViewController(viewModel: detailViewModel)
         self.navigationController = navigationController

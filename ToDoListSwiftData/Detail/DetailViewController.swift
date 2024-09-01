@@ -53,6 +53,16 @@ class DetailViewController: UIViewController {
         return button
     }()
 
+    private lazy var loader: UIAlertController = {
+        let loader = UIAlertController(title: nil, message: "Saving, please wait...", preferredStyle: .alert)
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        indicator.startAnimating()
+        loader.view.addSubview(indicator)
+        return loader
+    }()
+
     // MARK: Life cycle
     init(viewModel: DetailViewProtocol) {
         self.viewModel = viewModel
@@ -96,7 +106,11 @@ class DetailViewController: UIViewController {
 
         switch result {
         case .success:
-            self.navigationController?.popViewController(animated: true)
+            self.present(loader, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.loader.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
+            }
         case .failure(let error):
             let alertViewController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
             alertViewController.addAction(.init(title: "Ok", style: .destructive))

@@ -27,7 +27,7 @@ class DetailViewModel: DetailViewProtocol {
     var isFinished: Bool
 
     // MARK: Life cycle
-    init(toDosManager: ToDoManager = SwiftDataManager(), type: DetailType = .new, id: UUID = .init(), titleTextField: String = .init(), descriptionTextField: String = .init(), isFinished: Bool = false) {
+    init(toDosManager: ToDoManager = SwiftDataManager.shared, type: DetailType = .new, id: UUID = .init(), titleTextField: String = .init(), descriptionTextField: String = .init(), isFinished: Bool = false) {
         self.toDosManager = toDosManager
         self.type = type
         self.id = id
