@@ -10,35 +10,37 @@ import XCTest
 
 final class SwiftDataManagerTests: XCTestCase {
 
-    private var swiftDataManager: ToDoManager? = SwiftDataManager.shared
+    private var sut: ConfigurableSwiftDataManager!
 
-    override func setUp() {
-        swiftDataManager = SwiftDataManager.shared
+    override func setUp() async throws {
+        sut = try .init(modelConfiguration: .init(for: ToDo.self, isStoredInMemoryOnly: true))
     }
 
     override func tearDown() {
-        swiftDataManager = nil
+        sut = nil
     }
 
-    func test_addNewData() {
-        swiftDataManager?.deleteAll()
-
+    func test_insert() throws {
         let expectedTitle: String = "Test add data"
         let expectedDescription: String = "New Data"
 
-        swiftDataManager?.addNewData(title: expectedTitle, description: expectedDescription)
-
-        guard let data = swiftDataManager?.fetchData() else {
-            XCTFail("No data was added")
-            return
-        }
-
-        let result = data.contains(where: { todo in
-            todo.title == expectedTitle && todo.toDoDescription == expectedDescription
-        })
+        sut.insert(ToDo(title: expectedTitle, toDoDescription: expectedDescription))
+        let result: ToDo? = try sut.find().first
 
         XCTAssertNotNil(result)
-        XCTAssertTrue(result)
-        XCTAssertEqual(data.count, 1)
+        XCTAssertEqual(result?.title, expectedTitle)
+        XCTAssertEqual(result?.toDoDescription, expectedDescription)
+        XCTAssertEqual(result?.isFinished, false)
+    }
+
+    func test_update() throws {
+        let model = ToDo(title: "Test add data", toDoDescription: "New Data")
+
+        sut.insert(model)
+        model.title = "new title"
+        let result: ToDo? = sut.get(model.id)
+
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result?.title, "new title")
     }
 }

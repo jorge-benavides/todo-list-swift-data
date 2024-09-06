@@ -95,26 +95,23 @@ class DetailViewController: UIViewController {
         saveButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: Constants.minusStandardSpacing).isActive = true
         saveButton.heightAnchor.constraint(equalToConstant: Constants.buttonheight).isActive = true
 
-        if viewModel.type == .update {
-            titleTextField.text = viewModel.titleTextField
-            descriptionTextField.text = viewModel.descriptionTextField
-        }
+        titleTextField.text = viewModel.titleTextField
+        descriptionTextField.text = viewModel.descriptionTextField
     }
 
     @objc private func saveButtonTapped() {
-        let result = viewModel.save(title: titleTextField.text ?? "", description: descriptionTextField.text ?? "")
-
-        switch result {
-        case .success:
-            self.present(loader, animated: true)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self.loader.dismiss(animated: true, completion: nil)
+        Task {
+            self.present(self.loader, animated: true)
+            do {
+                try viewModel.save(title: titleTextField.text ?? "", description: descriptionTextField.text ?? "")
+                try? await Task.sleep(for: .seconds(1))
                 self.navigationController?.popViewController(animated: true)
+            } catch {
+                let alertViewController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
+                alertViewController.addAction(.init(title: "Ok", style: .destructive))
+                self.present(alertViewController, animated: true)
             }
-        case .failure(let error):
-            let alertViewController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
-            alertViewController.addAction(.init(title: "Ok", style: .destructive))
-            self.present(alertViewController, animated: true)
+            self.loader.dismiss(animated: true, completion: nil)
         }
     }
 }

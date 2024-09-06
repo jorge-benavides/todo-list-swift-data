@@ -11,17 +11,18 @@ protocol ListViewProtocol {
     func count() -> Int
     func updateTodos()
     func getListCellViewModel(at index: Int) -> ListCellViewModel
-    func deleteItem(at index: Int, completion: () -> ())
+    func deleteItem(at index: Int)
+    func getListDetailsViewModel() -> DetailViewProtocol
     func getListDetailsViewModel(at index: Int) -> DetailViewProtocol
 }
 
 class ListViewModel: ListViewProtocol {
 
-    private let toDosManager: ToDoManager
+    private let dataManager: SwiftDataManager
     private var toDos: [ToDo] = []
 
-    init(toDosManager: ToDoManager = SwiftDataManager.shared) {
-        self.toDosManager = toDosManager
+    init(_ dataManager: SwiftDataManager) {
+        self.dataManager = dataManager
     }
 
     func count() -> Int {
@@ -29,24 +30,25 @@ class ListViewModel: ListViewProtocol {
     }
 
     func updateTodos() {
-        toDos = self.toDosManager.fetchData()
+        toDos = (try? dataManager.find()) ?? []
     }
 
     func getListCellViewModel(at index: Int) -> ListCellViewModel {
         let item = toDos[index]
-        return ListCellViewModel(uuid: item.id.uuidString, title: item.title, description: item.toDoDescription, isFinished: item.isFinished)
+        return ListCellViewModel(title: item.title, description: item.toDoDescription, isFinished: item.isFinished)
     }
 
-    func deleteItem(at index: Int, completion: () -> ()) {
-        let toDo = toDos[index]
-        toDosManager.deleteData(toDo: toDo)
-        toDos = self.toDosManager.fetchData()
-        completion()
+    func deleteItem(at index: Int) {
+        dataManager.delete(toDos.remove(at: index))
+    }
+
+    func getListDetailsViewModel() -> DetailViewProtocol {
+        return DetailViewModel(dataManager)
     }
 
     func getListDetailsViewModel(at index: Int) -> DetailViewProtocol {
         let toDo = toDos[index]
-        let viewModel = DetailViewModel(type: .update, id: toDo.id, titleTextField: toDo.title, descriptionTextField: toDo.toDoDescription, isFinished: toDo.isFinished)
+        let viewModel = DetailViewModel(dataManager, id: toDo.id)
         return viewModel
     }
 }

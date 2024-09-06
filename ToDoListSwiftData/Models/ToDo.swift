@@ -10,13 +10,16 @@ import SwiftData
 
 @Model
 class ToDo {
-    @Attribute(.unique) var id: UUID
+    @Attribute(.unique)
     var title: String
     var toDoDescription: String
     var isFinished: Bool
 
-    init(id: UUID, title: String, toDoDescription: String, isFinished: Bool) {
-        self.id = id
+    init(
+        title: String,
+        toDoDescription: String,
+        isFinished: Bool = false
+    ) {
         self.title = title
         self.toDoDescription = toDoDescription
         self.isFinished = isFinished
