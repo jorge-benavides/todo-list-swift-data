@@ -36,6 +36,8 @@ class ListViewModel: ListViewProtocol {
     func getListCellViewModel(at index: Int) -> ListCellViewModel {
         let item = toDos[index]
         return ListCellViewModel(title: item.title, description: item.toDoDescription, isFinished: item.isFinished)
+        // after migration we can use category
+        //return ListCellViewModel(title: item.title, description: "\(item.category): \(item.toDoDescription)", isFinished: item.isFinished)
     }
 
     func deleteItem(at index: Int) {

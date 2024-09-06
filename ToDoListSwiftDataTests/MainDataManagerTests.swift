@@ -1,5 +1,5 @@
 //
-//  SwiftDataManagerTests.swift
+//  MainDataManagerTests.swift
 //  ToDoListSwiftDataTests
 //
 //  Created by Carlos Barron on 01/09/24.
@@ -8,12 +8,12 @@
 import XCTest
 @testable import ToDoListSwiftData
 
-final class SwiftDataManagerTests: XCTestCase {
+final class MainDataManagerTests: XCTestCase {
 
-    private var sut: ConfigurableSwiftDataManager!
+    private var sut: MainDataManager!
 
     override func setUp() async throws {
-        sut = try .init(modelConfiguration: .init(for: ToDo.self, isStoredInMemoryOnly: true))
+        sut = try MainDataManager()
     }
 
     override func tearDown() {
