@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let configuration = ModelConfiguration(for: ToDo.self)
-        dataManager = try? ConfigurableSwiftDataManager(modelConfiguration: configuration)
+        dataManager = try? MainDataManager()
         return true
     }
 
