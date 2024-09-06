@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		70FD368F2C8A706A00A38E65 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD368E2C8A706A00A38E65 /* MainDataManager.swift */; };
 		70FD36912C8AB32300A38E65 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD36902C8AB32300A38E65 /* SwiftDataManager.swift */; };
+		70FD36932C8AB7BF00A38E65 /* MainMigrationPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD36922C8AB7BF00A38E65 /* MainMigrationPlan.swift */; };
 		D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51BA2C83915600341184 /* AppDelegate.swift */; };
 		D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51BC2C83915600341184 /* SceneDelegate.swift */; };
 		D00F51C42C83915800341184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00F51C32C83915800341184 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		70FD368E2C8A706A00A38E65 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		70FD36902C8AB32300A38E65 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
+		70FD36922C8AB7BF00A38E65 /* MainMigrationPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMigrationPlan.swift; sourceTree = "<group>"; };
 		D00F51B72C83915600341184 /* ToDoListSwiftData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListSwiftData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00F51BA2C83915600341184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D00F51BC2C83915600341184 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				70FD36902C8AB32300A38E65 /* SwiftDataManager.swift */,
 				70FD368E2C8A706A00A38E65 /* MainDataManager.swift */,
+				70FD36922C8AB7BF00A38E65 /* MainMigrationPlan.swift */,
 			);
 			path = SwiftDataManager;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				70FD368F2C8A706A00A38E65 /* MainDataManager.swift in Sources */,
 				D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */,
 				D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */,
+				70FD36932C8AB7BF00A38E65 /* MainMigrationPlan.swift in Sources */,
 				D00F51F52C83A8A000341184 /* ToDo.swift in Sources */,
 				D0E48E952C83E118004AC204 /* DetailViewModel.swift in Sources */,
 				D00F51EC2C8391CA00341184 /* ListViewController.swift in Sources */,
