@@ -88,8 +88,9 @@ class ListViewController: UIViewController {
 
     @objc private func addTapped() {
         guard let navigationController = navigationController else { return }
-        let detailViewController = DetailViewCoordinator(navigationController: navigationController)
-        detailViewController.start()
+        let viewModel = viewModel.getListDetailsViewModel()
+        let coordinator = DetailViewCoordinator(detailViewModel: viewModel, navigationController: navigationController)
+        coordinator.start()
     }
 }
 
@@ -116,10 +117,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.deleteItem(at: indexPath.row) {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                tableView.reloadData()
-            }
+            viewModel.deleteItem(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
         }
     }
 }

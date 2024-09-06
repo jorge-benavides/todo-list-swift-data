@@ -13,18 +13,15 @@ enum DetailType {
 }
 
 class DetailViewCoordinator: Coordinator {
-    
-    private let detailViewController: DetailViewController
     private let detailViewModel: DetailViewProtocol
     private let navigationController: UINavigationController
 
-    init(detailViewModel: DetailViewProtocol = DetailViewModel(toDosManager: SwiftDataManager.shared), navigationController: UINavigationController) {
+    init(detailViewModel: DetailViewProtocol, navigationController: UINavigationController) {
         self.detailViewModel = detailViewModel
-        self.detailViewController = DetailViewController(viewModel: detailViewModel)
         self.navigationController = navigationController
     }
 
     func start() {
-        navigationController.pushViewController(detailViewController, animated: true)
+        navigationController.pushViewController(DetailViewController(viewModel: detailViewModel), animated: true)
     }
 }

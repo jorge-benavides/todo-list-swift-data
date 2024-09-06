@@ -12,7 +12,7 @@ class ToDoTableViewCell: UITableViewCell {
     // MARK: Properties
     static let identifier: String = String(describing: ToDoTableViewCell.self)
 
-    var listCellViewModel: ListCellViewModel = ListCellViewModel(uuid: "", title: "", description: "", isFinished: false) {
+    var listCellViewModel: ListCellViewModel = ListCellViewModel(title: "", description: "", isFinished: false) {
         didSet {
             self.titleLabel.text = listCellViewModel.getData().title
             self.descriptionLabel.text = listCellViewModel.getData().description

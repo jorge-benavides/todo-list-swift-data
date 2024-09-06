@@ -10,13 +10,11 @@ import Foundation
 class ListCellViewModel {
 
     // MARK: Properties
-    private let uuid: String
     private let title: String
     private let description: String
     private let isFinished: Bool
 
-    init(uuid: String, title: String, description: String, isFinished: Bool) {
-        self.uuid = uuid
+    init(title: String, description: String, isFinished: Bool) {
         self.title = title
         self.description = description
         self.isFinished = isFinished

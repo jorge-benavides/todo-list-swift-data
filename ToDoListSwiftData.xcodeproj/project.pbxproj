@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70FD368F2C8A706A00A38E65 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD368E2C8A706A00A38E65 /* SwiftDataManager.swift */; };
 		D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51BA2C83915600341184 /* AppDelegate.swift */; };
 		D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51BC2C83915600341184 /* SceneDelegate.swift */; };
 		D00F51C42C83915800341184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00F51C32C83915800341184 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51EE2C8392E100341184 /* BaseColors.swift */; };
 		D00F51F22C839C9C00341184 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */; };
 		D00F51F52C83A8A000341184 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F42C83A8A000341184 /* ToDo.swift */; };
-		D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F72C83B1C800341184 /* SwiftDataManager.swift */; };
 		D00F51FA2C83B8FB00341184 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51F92C83B8FB00341184 /* ListViewModel.swift */; };
 		D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */; };
 		D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */; };
@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70FD368E2C8A706A00A38E65 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		D00F51B72C83915600341184 /* ToDoListSwiftData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListSwiftData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00F51BA2C83915600341184 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D00F51BC2C83915600341184 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		D00F51EE2C8392E100341184 /* BaseColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColors.swift; sourceTree = "<group>"; };
 		D00F51F12C839C9B00341184 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D00F51F42C83A8A000341184 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
-		D00F51F72C83B1C800341184 /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		D00F51F92C83B8FB00341184 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D00F51FB2C83BE4E00341184 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		D0E48E8D2C83C36A004AC204 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		D00F51F62C83B1A600341184 /* SwiftDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				D00F51F72C83B1C800341184 /* SwiftDataManager.swift */,
+				70FD368E2C8A706A00A38E65 /* SwiftDataManager.swift */,
 			);
 			path = SwiftDataManager;
 			sourceTree = "<group>";
@@ -351,10 +351,10 @@
 			files = (
 				D00F51FC2C83BE4E00341184 /* ListCellViewModel.swift in Sources */,
 				D00F51EF2C8392E100341184 /* BaseColors.swift in Sources */,
-				D00F51F82C83B1C800341184 /* SwiftDataManager.swift in Sources */,
 				D0E48E932C83D9B1004AC204 /* DetailViewController.swift in Sources */,
 				D00F51BB2C83915600341184 /* AppDelegate.swift in Sources */,
 				D00F51BD2C83915600341184 /* SceneDelegate.swift in Sources */,
+				70FD368F2C8A706A00A38E65 /* SwiftDataManager.swift in Sources */,
 				D0E48E902C83D3A5004AC204 /* NoDataView.swift in Sources */,
 				D0E48E8E2C83C36A004AC204 /* UIImage+extension.swift in Sources */,
 				D00F51F52C83A8A000341184 /* ToDo.swift in Sources */,
